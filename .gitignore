@@ -218,3 +218,23 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- IEEE CIS DSQA submission artifacts ---
+# Zips are rebuilt by submission/build.sh and baselines/zero_shot/build.sh.
+*.zip
+
+# Aux weights downloaded by submission/build.sh --with-models.
+# Never commit OLMo 32B, MiniLM, or Docling layout snapshots.
+**/embed_model/
+**/docling_models/
+**/adapters/**
+*.safetensors
+*.gguf
+*.ot
+*.faiss
+
+# Local corpus / index dumps (Data). Keep data/README.md.
+data/*
+!data/README.md
+submission/index/
+
